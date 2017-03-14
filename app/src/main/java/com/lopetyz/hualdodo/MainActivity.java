@@ -4,12 +4,19 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.lopetyz.hualdodo.homebtnlist.BtnListAdapter;
+import com.lopetyz.hualdodo.homebtnlist.BtnListManager;
+
 public class MainActivity extends AppCompatActivity {
+
+    private RecyclerView mRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +33,12 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        BtnListManager manager = new BtnListManager(this);
+        mRecyclerView = (RecyclerView) findViewById(R.id.recycle_view);
+        BtnListAdapter btnListAdapter = new BtnListAdapter(this, manager.getBtnItemList());
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.setAdapter(btnListAdapter);
     }
 
     @Override
