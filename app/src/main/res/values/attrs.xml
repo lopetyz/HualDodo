@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="XRadioGroup">
+        <attr name="horizontalSpacing" format="integer" />
+        <attr name="verticalSpacing" format="integer" />
+    </declare-styleable>
+
+</resources>
