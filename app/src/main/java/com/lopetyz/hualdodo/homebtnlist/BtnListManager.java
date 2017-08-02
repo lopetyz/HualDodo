@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 
 import com.lopetyz.hualdodo.activity.CustomViewActivity;
+import com.lopetyz.hualdodo.activity.RealmLearningActivity;
+import com.lopetyz.hualdodo.activity.RetrofitActivity;
 import com.lopetyz.hualdodo.activity.RxLearningActivity;
 
 import java.util.ArrayList;
@@ -29,8 +31,8 @@ public class BtnListManager {
         mBtnItemList = new ArrayList<>();
         mBtnItemList.add(new BtnItem(mContext, RxLearningActivity.class, "RxLearningActivity"));
         mBtnItemList.add(new BtnItem(mContext, CustomViewActivity.class, "CustomViewActivity"));
-        mBtnItemList.add(new BtnItem(mContext, null, "hual3"));
-        mBtnItemList.add(new BtnItem(mContext, null, "hual4"));
+        mBtnItemList.add(new BtnItem(mContext, RealmLearningActivity.class, "RealmLearningActivity"));
+        mBtnItemList.add(new BtnItem(mContext, RetrofitActivity.class, "RetrofitActivity"));
     }
 
     public List<BtnItem> getBtnItemList() {

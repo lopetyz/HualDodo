@@ -6,7 +6,10 @@ import io.reactivex.Completable;
 import io.reactivex.Flowable;
 import io.reactivex.Maybe;
 import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.Single;
+import io.reactivex.annotations.NonNull;
 
 /**
  * Created by lopetyz on 2017/3/20.
