@@ -1,23 +1,19 @@
 package com.lopetyz.hualdodo.common.network;
 
-import android.os.Looper;
 
 import com.orhanobut.logger.Logger;
 
-import java.lang.reflect.ParameterizedType;
 import java.net.ConnectException;
 import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.Retrofit;
 
 /**
  * Created by lopetyz on 2017/7/25.
@@ -25,6 +21,7 @@ import retrofit2.Response;
 
 public class RetrofitClient {
     private static LinkedHashMap<String, BaseService> mInstances = new LinkedHashMap<>();
+    private static LinkedHashMap<String, Retrofit> mRetrofitMap = new LinkedHashMap<>();
 
     @SuppressWarnings("unchecked")
     public static <T extends BaseService> T getInstance(Class<T> subClass) {

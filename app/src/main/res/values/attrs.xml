@@ -2,8 +2,24 @@
 <resources>
 
     <declare-styleable name="XRadioGroup">
-        <attr name="horizontalSpacing" format="integer" />
-        <attr name="verticalSpacing" format="integer" />
+        <attr name="horizontalSpacing" format="integer"/>
+        <attr name="verticalSpacing" format="integer"/>
     </declare-styleable>
 
+    <declare-styleable name="CountDownTimerView">
+        <attr name="text_title" format="string"/>
+        <attr name="text_title_color" format="color"/>
+        <attr name="text_title_size" format="dimension"/>
+        <attr name="date_format" format="string"/>
+        <attr name="text_orientation" format="integer"/>
+        <attr name="millis_in_future" format="integer"/>
+        <attr name="count_down_interval" format="integer"/>
+        <attr name="text_count_down_time_color" format="color"/>
+        <attr name="text_count_down_time_size" format="dimension"/>
+        <attr name="text_count_down_finish" format="string"/>
+        <attr name="text_count_down_finish_color" format="color"/>
+        <attr name="text_count_down_finish_size" format="dimension"/>
+    </declare-styleable>
+
+    <attr name="countDownTimer" format="reference"/>
 </resources>

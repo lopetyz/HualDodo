@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.lopetyz.hualdodo.activity.CustomViewActivity">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
 
-    <com.lopetyz.hualdodo.widget.SlidingSwitchButton
+    <LinearLayout
+
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.lopetyz.hualdodo.activity.CustomViewActivity">
 
-</LinearLayout>
+        <!--<com.lopetyz.hualdodo.widget.SlidingSwitchButton-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"/>-->
+
+
+        <com.lopetyz.hualdodo.widget.CountDownTimerView
+            android:id="@+id/count_down_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            app:count_down_interval="1000"
+            app:millis_in_future="10000"
+            app:text_count_down_finish="竞价结束"
+            app:text_orientation="1"
+            app:text_title="确认时间还剩余"/>
+
+    </LinearLayout>
+</layout>
