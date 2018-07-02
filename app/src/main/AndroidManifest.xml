@@ -26,11 +26,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.RxLearningActivity"/>
-        <activity android:name=".activity.CustomViewActivity"/>
-        <activity android:name=".activity.RealmLearningActivity"/>
         <activity android:name=".activity.RetrofitActivity">
-        </activity>
-        <activity android:name=".activity.RecyclerViewActivity">
         </activity>
     </application>
 

@@ -8,7 +8,6 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.os.Build;
 import android.os.CountDownTimer;
-import android.os.Looper;
 import android.support.annotation.IntDef;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
@@ -19,7 +18,6 @@ import android.util.DisplayMetrics;
 import android.view.View;
 
 import com.lopetyz.hualdodo.R;
-import com.orhanobut.logger.Logger;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

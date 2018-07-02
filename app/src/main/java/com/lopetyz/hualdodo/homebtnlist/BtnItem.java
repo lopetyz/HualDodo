@@ -14,10 +14,10 @@ public class BtnItem {
     private Class mClass;
     private String mButtonName;
 
-    public BtnItem(Context context, Class cls, String buttonName) {
+    public BtnItem(Context context, Class cls) {
         mContext = context;
         mClass = cls;
-        mButtonName = buttonName;
+        mButtonName = cls.getSimpleName();
     }
 
     public String getButtonName() {
@@ -25,7 +25,7 @@ public class BtnItem {
     }
 
     public void startActivity() {
-        if (mClass ==null) {
+        if (mClass == null) {
             Log.e("hualtest", "NullPointerException: mClass is null");
             return;
         }

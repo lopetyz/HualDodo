@@ -1,4 +1,4 @@
-package com.lopetyz.hualdodo.view;
+package com.lopetyz.hualdodo.widget;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
