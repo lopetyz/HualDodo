@@ -21,7 +21,6 @@ import retrofit2.Retrofit;
 
 public class RetrofitClient {
     private static LinkedHashMap<String, BaseService> mInstances = new LinkedHashMap<>();
-    private static LinkedHashMap<String, Retrofit> mRetrofitMap = new LinkedHashMap<>();
 
     @SuppressWarnings("unchecked")
     public static <T extends BaseService> T getInstance(Class<T> subClass) {

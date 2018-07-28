@@ -6,7 +6,7 @@ android {
 
 
     defaultConfig {
-        minSdkVersion 22
+        minSdkVersion 21
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
@@ -22,6 +22,10 @@ android {
         }
     }
 
+    dataBinding {
+        enabled = true
+    }
+
 }
 
 dependencies {
@@ -32,5 +36,15 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    implementation 'com.orhanobut:logger:2.2.0'
+    api 'com.orhanobut:logger:2.2.0'
+
+    //RxJava
+    api 'io.reactivex.rxjava2:rxjava:2.1.15'
+    api 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    //Retrofit
+    api "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
+    api "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofitVersion"
+    api "com.squareup.retrofit2:adapter-rxjava2:$rootProject.ext.retrofitVersion"
+    api "org.ligboy.retrofit2:converter-fastjson-android:2.1.0"
+    api "com.squareup.okhttp3:logging-interceptor:3.10.0"
 }

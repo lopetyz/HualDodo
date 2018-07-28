@@ -1,27 +1,21 @@
 package com.lopetyz.hualdodo.activity;
 
-import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 
 import com.lopetyz.hualdodo.R;
-import com.lopetyz.hualdodo.databinding.ActivityRetrofitBinding;
+import com.lopetyz.hualdodo.annotations.BindBtnItem;
 
+@BindBtnItem(value = "RetrofitActivity")
 public class RetrofitActivity extends AppCompatActivity {
 
-    private ActivityRetrofitBinding mBinding;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_retrofit);
 
-        mBinding.btnSubmit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        setContentView(R.layout.activity_retrofit);
 
-            }
-        });
     }
 }

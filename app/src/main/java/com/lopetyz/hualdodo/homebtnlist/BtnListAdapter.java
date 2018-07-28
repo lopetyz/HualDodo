@@ -22,6 +22,10 @@ public class BtnListAdapter extends RecyclerView.Adapter<BtnListAdapter.BtnItemH
     private LayoutInflater mInflater;
     private List<BtnItem> mItemList;
 
+    public BtnListAdapter(Context context) {
+        mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    }
+
     public BtnListAdapter(Context context, List<BtnItem> itemList) {
         mItemList = itemList;
         mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -44,6 +48,15 @@ public class BtnListAdapter extends RecyclerView.Adapter<BtnListAdapter.BtnItemH
     @Override
     public int getItemCount() {
         return mItemList == null ? 0 : mItemList.size();
+    }
+
+    public void replaceData(List<BtnItem> items) {
+        setList(items);
+    }
+
+    private void setList(List<BtnItem> items) {
+        mItemList = items;
+        notifyDataSetChanged();
     }
 
     class BtnItemHolder<T extends ViewDataBinding> extends RecyclerView.ViewHolder {

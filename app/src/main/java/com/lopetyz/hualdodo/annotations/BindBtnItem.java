@@ -1,11 +1,12 @@
-package com.lopetyz.hualdodo.activity;
+package com.lopetyz.hualdodo.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Target(value = ElementType.TYPE)
-@Retention(value = RetentionPolicy.CLASS)
-public @interface BtnItem {
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.CLASS)
+public @interface BindBtnItem {
+    String value();
 }

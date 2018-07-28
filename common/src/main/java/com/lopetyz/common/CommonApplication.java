@@ -1,4 +1,6 @@
 package com.lopetyz.common;
 
-public class CommonApplication {
+import android.app.Application;
+
+public class CommonApplication extends Application {
 }

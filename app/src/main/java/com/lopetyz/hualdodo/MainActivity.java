@@ -1,5 +1,6 @@
 package com.lopetyz.hualdodo;
 
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -11,29 +12,33 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.lopetyz.hualdodo.databinding.ActivityMainBinding;
 import com.lopetyz.hualdodo.homebtnlist.BtnListAdapter;
 import com.lopetyz.hualdodo.homebtnlist.BtnListManager;
 
 public class MainActivity extends AppCompatActivity {
 
-    private RecyclerView mRecyclerView;
+    private ActivityMainBinding mBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        setSupportActionBar(mBinding.toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+        mBinding.fab.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show());
 
+        mBinding.content.recycleView.setLayoutManager(new LinearLayoutManager(this));
         BtnListManager manager = new BtnListManager(this);
-        mRecyclerView = (RecyclerView) findViewById(R.id.recycle_view);
-        BtnListAdapter btnListAdapter = new BtnListAdapter(this, manager.getBtnItemList());
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mRecyclerView.setAdapter(btnListAdapter);
+        mBinding.setBtnItems(manager.getBtnItemList());
+        BtnListAdapter btnListAdapter = new BtnListAdapter(this);
+        mBinding.content.recycleView.setAdapter(btnListAdapter);
+//        mBinding.content.setBtnItems(manager.getBtnItemList());
+//        mRecyclerView = (RecyclerView) findViewById(R.id.recycle_view);
+//        BtnListAdapter btnListAdapter = new BtnListAdapter(this, manager.getBtnItemList());
+//        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        mRecyclerView.setAdapter(btnListAdapter);
     }
 
     @Override

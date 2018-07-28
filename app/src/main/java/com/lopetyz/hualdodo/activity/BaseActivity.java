@@ -17,9 +17,17 @@ import retrofit2.Response;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
+    ViewDataBinding mBinding;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if (enableDataBinding()) {
+            mBinding = getViewDataBinding();
+        } else {
+            setContentView(getLayoutId());
+        }
     }
 
     public <T extends ViewDataBinding> T getViewDataBinding() {
@@ -28,6 +36,8 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     @LayoutRes
     protected abstract int getLayoutId();
+
+    protected abstract boolean enableDataBinding();
 
     public <T> void executeTask(Call<T> call) {
         call.enqueue(new Callback<T>() {
